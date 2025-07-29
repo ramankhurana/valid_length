@@ -69,7 +69,7 @@ class ValidLength(Validator):
                 fix_value=corrected_value,
             )
 
-        if self._max is not None and len(value) > self._max:
+        if self._max is not None and len(value) >= self._max:
             logger.debug(f"Value {value} is greater than {self._max}.")
             return FailResult(
                 error_message=f"Value has length greater than {self._max}. "
